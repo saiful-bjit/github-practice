@@ -1,1 +1,0 @@
-Do not delete server file-2 from local.
