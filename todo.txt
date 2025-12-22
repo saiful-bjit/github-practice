@@ -1,5 +1,4 @@
-Step:
-    1. Delete All File
-Step:
-    1. Delete All File
-    2. Create Server-1 File
+Server:
+    1. Modify: todo.txt
+    2. Delete: local.txt
+    3. Create: server.txt

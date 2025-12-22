@@ -1,0 +1,27 @@
+Server: Development container (Ubuntu 24.04.3 LTS)
+
+Purpose:
+- Local development environment for practicing git and common CLI workflows.
+- Lightweight container-based "server" used inside the workspace.
+
+OS / Base:
+- Ubuntu 24.04.3 LTS (running in a devcontainer)
+
+Common installed CLI tools (available on PATH):
+- apt, dpkg, docker, git, gh, kubectl
+- curl, wget, ssh, scp, rsync, gpg
+- ps, lsof, netstat, top, tree, find, grep
+- zip, unzip, tar, gzip, bzip2, xz
+
+Recommended checks (commands you can run):
+- Verify OS: lsb_release -a || cat /etc/os-release
+- Check Git: git --version
+- Check Docker: docker --version
+- List listening ports: sudo netstat -tulpen
+- Show processes: ps aux | head -n 20
+- Disk usage: df -h
+- Free memory: free -h
+
+Notes:
+- Use "$BROWSER" <url> to open pages in the host default browser from this environment.
+- This environment is intended for learning git commands and safe dev workflows. Keep important data backed up outside the container.
