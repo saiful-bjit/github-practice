@@ -2,3 +2,8 @@ Server Practice:
     Delete: Server File-2, Local File
     Modify: Server File-3
     Create: Server File-4 
+Local Practice:
+    Delete: Server File-3
+    Modify: Server File-2
+
+No Change: Local file
