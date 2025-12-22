@@ -1,2 +1,3 @@
-It's create from server.
-It's create from local.
+Server Practice:
+    Delete: Server File-2, Local File
+    Modify: Server File-3
