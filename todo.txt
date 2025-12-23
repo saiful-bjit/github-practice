@@ -1,4 +1,0 @@
-Server:
-    1. Modify: todo.txt
-    2. Delete: local.txt
-    3. Create: server.txt
