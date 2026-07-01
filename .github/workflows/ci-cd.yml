@@ -50,3 +50,14 @@ jobs:
         run: |
           echo "Deploying to Firebase..."
           # Add Firebase deployment command here
+
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    needs:
+      - render
+
+    steps:
+      - name: Release
+        run: |
+          echo "Creating Release..."
