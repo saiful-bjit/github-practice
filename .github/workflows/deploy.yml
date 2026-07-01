@@ -25,9 +25,11 @@
 name: CI/CD Pipeline
 
 on:
-  push:
+  pull_request:
     branches:
       - main
+    types:
+      - closed
 
 jobs:
 
@@ -37,6 +39,9 @@ jobs:
   # ----------------------------------------------------------
   build:
     name: Build
+    if: >
+      github.event.pull_request.merged == true &&
+      github.event.pull_request.head.ref == 'dev'
     runs-on: ubuntu-latest
 
     steps:
