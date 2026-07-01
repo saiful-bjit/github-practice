@@ -12,9 +12,11 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        run: | 
-          echo "Checking out the repository..."
-          git checkout main
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          echo "Building..."
 
   render:
     name: Render
