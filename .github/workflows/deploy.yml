@@ -25,11 +25,9 @@
 name: CI/CD Pipeline
 
 on:
-  pull_request:
+  push:
     branches:
       - main
-    types:
-      - closed
 
 jobs:
 
