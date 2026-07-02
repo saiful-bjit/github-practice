@@ -1,0 +1,51 @@
+payload:
+{
+  "projectName":"My Shop",
+  "packageName":"com.company.shop",
+  "dbName":"shop_db",
+  "dbUser":"root",
+  "dbPassword":"123456",
+  "domain":"myshop.com"
+}
+
+
+CI/CD:
+name: Deploy Customer
+
+on:
+  workflow_dispatch:
+    inputs:
+      projectId:
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get customer config
+        run: |
+          curl https://api.example.com/projects/${{ github.event.inputs.projectId }} \
+          -o config.json
+
+      - name: Replace configs
+        run: |
+          node scripts/configure.js config.json
+
+      - run: npm install
+
+      - run: npm run build
+
+      - name: Upload to cPanel
+        run: |
+          node scripts/deploy.js
+
+      - name: Notify backend
+        run: |
+          curl -X POST \
+          https://api.example.com/projects/${{ github.event.inputs.projectId }}/complete
+
+
+API: POST https://api.github.com/repos/your-org/template-project/actions/workflows/deploy.yml/dispatches

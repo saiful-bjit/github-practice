@@ -1,0 +1,26 @@
+name: Deploy Production Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      projectName:
+        required: true
+        type: string
+
+      packageName:
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    name: Deploy Production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Print
+        run: |
+          echo "${{ github.event.inputs.projectName }}"
+          echo "${{ github.event.inputs.packageName }}"
